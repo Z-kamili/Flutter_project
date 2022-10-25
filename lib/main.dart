@@ -44,11 +44,21 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-
+        // List<Map<String, Object>>
         // ignore: unused_local_variable
-        var question = [
-          'What\'s your favorite color?',
-          'What\'s your favorite animal?',
+        var questions = [
+          {
+          'questionText':'What is your favorite color?',
+          'answers':['Black','Red','Green','White'],
+          },
+          {
+          'questionText':'What is your favorite animal?',
+          'answers':['Rabbit','Snake','Elephant','Lion'],
+          },
+          {
+          'questionText':'Who is your favorite player?',
+          'answers':['Ronaldo','Messi','Mané','Salah'],
+          },
         ];
 
         // ignore: duplicate_ignore, duplicate_ignore
@@ -59,7 +69,7 @@ class _MyAppState extends State<MyApp> {
            // ignore: duplicate_ignore
            body: Column(children:[
               // ignore: prefer_const_constructors
-              Question(question[_questionIndex]),
+              Question(questions[_questionIndex]['questionText'] as String),
               Answer(_answerQuestion),
               Answer(_answerQuestion),
               Answer(_answerQuestion),
