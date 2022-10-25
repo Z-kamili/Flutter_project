@@ -6,8 +6,9 @@ import 'package:flutter/material.dart';
 class Answer extends StatelessWidget {
 
  final VoidCallback selectHandler;
+ final String answerText;
 
- Answer(this.selectHandler);
+ Answer(this.selectHandler,this.answerText);
 
 @override 
 Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ Widget build(BuildContext context) {
        primary: Colors.blue,
     ),
       // ignore: sort_child_properties_last
-      child: Text('Answer 1'),
+      child: Text(answerText),
       onPressed:this.selectHandler
   ),
 

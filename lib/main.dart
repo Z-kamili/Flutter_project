@@ -69,10 +69,11 @@ class _MyAppState extends State<MyApp> {
            // ignore: duplicate_ignore
            body: Column(children:[
               // ignore: prefer_const_constructors
-              Question(questions[_questionIndex]['questionText'] as String),
-              Answer(_answerQuestion),
-              Answer(_answerQuestion),
-              Answer(_answerQuestion),
+              Question(questions[_questionIndex]['questionText'] as String), // Question
+              ...(questions[_questionIndex]['answers'] as List<String>)
+                .map((answer){
+                return Answer(_answerQuestion,answer);
+              }).toList()
            ],),
         ),
 
