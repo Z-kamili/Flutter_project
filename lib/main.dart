@@ -3,7 +3,7 @@
 // ignore_for_file: prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
-
+import './answer.dart';
 import './question.dart';
 
 // void main() {
@@ -60,21 +60,10 @@ class _MyAppState extends State<MyApp> {
            body: Column(children:[
               // ignore: prefer_const_constructors
               Question(question[_questionIndex]),
-              ElevatedButton(
-              // ignore: sort_child_properties_last
-                child: Text('Answer 1'),
-                onPressed:_answerQuestion),
-              ElevatedButton(
-              // ignore: sort_child_properties_last
-                child:Text('Answer 2'),
-                onPressed:_answerQuestion),
-              ElevatedButton(
-              // ignore: sort_child_properties_last
-                child:Text('Answer 3'),
-                onPressed:_answerQuestion),
+              Answer(),
+              Answer(),
+              Answer(),
            ],),
-           //Column
-
         ),
 
         );

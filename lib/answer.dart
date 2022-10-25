@@ -13,12 +13,13 @@ Widget build(BuildContext context) {
     width: double.infinity,
     child : ElevatedButton(
     style: ElevatedButton.styleFrom(
+       // ignore: deprecated_member_use
        primary: Colors.blue,
     ),
       // ignore: sort_child_properties_last
       child: Text('Answer 1'),
       onPressed:null
-      ),
+  ),
 
   );
 
