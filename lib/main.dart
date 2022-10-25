@@ -15,6 +15,7 @@ import './question.dart';
 // ignore: prefer_const_constructors
 void main() => runApp(MyApp());
 
+// ignore: use_key_in_widget_constructors
 class MyApp extends StatefulWidget {
 
      @override 
@@ -36,6 +37,7 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
+    // ignore: avoid_print
     print(_questionIndex);
 
   }
@@ -59,15 +61,15 @@ class _MyAppState extends State<MyApp> {
               // ignore: prefer_const_constructors
               Question(question[_questionIndex]),
               ElevatedButton(
-                // ignore: sort_child_properties_last
+              // ignore: sort_child_properties_last
                 child: Text('Answer 1'),
                 onPressed:_answerQuestion),
               ElevatedButton(
-                // ignore: sort_child_properties_last
+              // ignore: sort_child_properties_last
                 child:Text('Answer 2'),
                 onPressed:_answerQuestion),
               ElevatedButton(
-                // ignore: sort_child_properties_last
+              // ignore: sort_child_properties_last
                 child:Text('Answer 3'),
                 onPressed:_answerQuestion),
            ],),
