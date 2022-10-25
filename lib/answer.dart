@@ -5,6 +5,10 @@ import 'package:flutter/material.dart';
 // ignore: use_key_in_widget_constructors
 class Answer extends StatelessWidget {
 
+ final VoidCallback selectHandler;
+
+ Answer(this.selectHandler);
+
 @override 
 Widget build(BuildContext context) {
 
@@ -18,7 +22,7 @@ Widget build(BuildContext context) {
     ),
       // ignore: sort_child_properties_last
       child: Text('Answer 1'),
-      onPressed:null
+      onPressed:this.selectHandler
   ),
 
   );

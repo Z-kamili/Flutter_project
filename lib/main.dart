@@ -60,9 +60,9 @@ class _MyAppState extends State<MyApp> {
            body: Column(children:[
               // ignore: prefer_const_constructors
               Question(question[_questionIndex]),
-              Answer(),
-              Answer(),
-              Answer(),
+              Answer(_answerQuestion),
+              Answer(_answerQuestion),
+              Answer(_answerQuestion),
            ],),
         ),
 
