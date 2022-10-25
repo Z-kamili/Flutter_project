@@ -3,6 +3,9 @@
 // ignore_for_file: prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
+
+import './question.dart';
+
 // void main() {
 
 //  runApp(MyApp());
@@ -16,25 +19,24 @@ class MyApp extends StatefulWidget {
 
      @override 
      State<StatefulWidget> createState() {
-      //TODO: implement createState
-      return MyAppState();
+      return _MyAppState();
      }
 
 }
-class MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyApp> {
 
-  var questionIndex = 0;
+  var _questionIndex = 0;
 
 
 
-  void answerQuestion()
+  void _answerQuestion()
   {
 
     // ignore: avoid_print
     setState(() {
-      questionIndex = questionIndex + 1;
+      _questionIndex = _questionIndex + 1;
     });
-    print(questionIndex);
+    print(_questionIndex);
 
   }
 
@@ -55,19 +57,19 @@ class MyAppState extends State<MyApp> {
            // ignore: duplicate_ignore
            body: Column(children:[
               // ignore: prefer_const_constructors
-              Text(question[questionIndex]),
+              Question(question[_questionIndex]),
               ElevatedButton(
                 // ignore: sort_child_properties_last
                 child: Text('Answer 1'),
-                onPressed:answerQuestion),
+                onPressed:_answerQuestion),
               ElevatedButton(
                 // ignore: sort_child_properties_last
                 child:Text('Answer 2'),
-                onPressed:answerQuestion),
+                onPressed:_answerQuestion),
               ElevatedButton(
                 // ignore: sort_child_properties_last
                 child:Text('Answer 3'),
-                onPressed:answerQuestion),
+                onPressed:_answerQuestion),
            ],),
            //Column
 
