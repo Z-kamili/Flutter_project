@@ -12,14 +12,30 @@ import 'package:flutter/material.dart';
 // ignore: prefer_const_constructors
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+
+     @override 
+     State<StatefulWidget> createState() {
+      //TODO: implement createState
+      return MyAppState();
+     }
+
+}
+class MyAppState extends State<MyApp> {
+
+  var questionIndex = 0;
+
 
 
   void answerQuestion()
   {
+
     // ignore: avoid_print
-    print('Answer chosen!');
+    setState(() {
+      questionIndex = questionIndex + 1;
+    });
+    print(questionIndex);
+
   }
 
   @override
@@ -39,7 +55,7 @@ class MyApp extends StatelessWidget {
            // ignore: duplicate_ignore
            body: Column(children:[
               // ignore: prefer_const_constructors
-              Text('The question!'),
+              Text(question[questionIndex]),
               ElevatedButton(
                 // ignore: sort_child_properties_last
                 child: Text('Answer 1'),
