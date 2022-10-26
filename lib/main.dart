@@ -3,8 +3,10 @@
 // ignore_for_file: prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
+
 import './answer.dart';
 import './question.dart';
+import './quiz.dart';
 
 // void main() {
 
@@ -27,7 +29,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
 
   var _questionIndex = 0;
-  final questions = const [
+  final _questions = const [
           {
           'questionText':'What is your favorite color?',
           'answers':['Black','Red','Green','White'],
@@ -40,7 +42,7 @@ class _MyAppState extends State<MyApp> {
           'questionText':'Who is your favorite player?',
           'answers':['Ronaldo','Messi','Mané','Salah'],
           },
-        ];
+];
 
 
 
@@ -54,7 +56,7 @@ class _MyAppState extends State<MyApp> {
     }); 
     // ignore: avoid_print
     print(_questionIndex);
-    if(_questionIndex < questions.length) {
+    if(_questionIndex < _questions.length) {
       // ignore: avoid_print
       print('We have more questions!');
          
@@ -74,14 +76,7 @@ class _MyAppState extends State<MyApp> {
            // ignore: prefer_const_constructors
            appBar: AppBar(title: Text('My First App'),),//AppBar
            // ignore: duplicate_ignore
-           body: _questionIndex < questions.length ? Column(children:[
-              // ignore: prefer_const_constructors
-              Question(questions[_questionIndex]['questionText'] as String), // Question
-              ...(questions[_questionIndex]['answers'] as List<String>)
-                .map((answer){
-                return Answer(_answerQuestion,answer);
-              }).toList()
-           ],) : Center(child : Text('You did it!')),
+           body : _questionIndex < _questions.length ? Quiz(answerQuestion : _answerQuestion, questionIndex: _questionIndex , questions: _questions) : Center(child : Text('You did it!')),
         ),
 
 
