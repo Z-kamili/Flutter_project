@@ -27,26 +27,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
 
   var _questionIndex = 0;
-
-
-
-  void _answerQuestion()
-  {
-
-    // ignore: avoid_print
-    setState(() {
-      _questionIndex = _questionIndex + 1;
-    });
-    // ignore: avoid_print
-    print(_questionIndex);
-
-  }
-
-  @override
-  Widget build(BuildContext context) {
-        // List<Map<String, Object>>
-        // ignore: unused_local_variable
-        var questions = [
+  final questions = const [
           {
           'questionText':'What is your favorite color?',
           'answers':['Black','Red','Green','White'],
@@ -60,6 +41,28 @@ class _MyAppState extends State<MyApp> {
           'answers':['Ronaldo','Messi','Mané','Salah'],
           },
         ];
+
+
+
+  void _answerQuestion()
+  {
+    // List<Map<String, Object>>
+    // ignore: unused_local_variable
+    // ignore: avoid_print
+    print(_questionIndex);
+    if(_questionIndex < questions.length - 1) {
+    // ignore: avoid_print
+    setState(() {
+      _questionIndex = _questionIndex + 1;
+    }); 
+
+    }
+
+  }
+
+  @override
+  Widget build(BuildContext context) {
+
 
         // ignore: duplicate_ignore, duplicate_ignore
         return MaterialApp(home:Scaffold(
