@@ -8,10 +8,8 @@ class Result extends StatelessWidget {
   @override 
   Widget build(BuildContext context) 
   {
-      return Container(
-
-        
-
+      return Center(
+        child: Text('You did it'),
       );
   }
 

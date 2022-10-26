@@ -26,7 +26,7 @@ final Function answerQuestion;
               // ignore: prefer_const_constructors
               Question(questions[questionIndex]['questionText'] as String), // Question
               ...(questions[questionIndex]['answers'] as List<Map<String,Object>>).map((answer){
-                return Answer(() => answerQuestion(answer['score']), answer['text'] as String);
+                return Answer(() => answerQuestion(answer['score']),answer['text'] as String);
               }).toList()
            ],);
  }
