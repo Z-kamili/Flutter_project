@@ -13,7 +13,7 @@ class Result extends StatelessWidget {
 
   String get resultPhrase
   {
-    var resultText = 'You did it!';
+    var resultText = 'You did it!'; 
     if(resultScore <= 8) {
       resultText = 'You are awesome and innocent';
     }else if (resultScore <= 12) {
