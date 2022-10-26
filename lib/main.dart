@@ -3,7 +3,6 @@
 // ignore_for_file: prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
-
 import './answer.dart';
 import './question.dart';
 import './quiz.dart';
@@ -29,6 +28,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
 
   var _questionIndex = 0;
+  var _totalScore = 0;
+
+
   final _questions = const [
         {
           'questionText':'What is your favorite color?',
@@ -61,11 +63,12 @@ class _MyAppState extends State<MyApp> {
 
 
 
-  void _answerQuestion()
+  void _answerQuestion(int score)
   {
     // List<Map<String, Object>>
     // ignore: unused_local_variable
     // ignore: avoid_print
+    _totalScore = _totalScore + score;
     setState(() {
       _questionIndex = _questionIndex + 1;
     }); 
@@ -74,7 +77,6 @@ class _MyAppState extends State<MyApp> {
     if(_questionIndex < _questions.length) {
       // ignore: avoid_print
       print('We have more questions!');
-         
     } else {
       // ignore: avoid_print
       print('No more question!');
@@ -96,8 +98,6 @@ class _MyAppState extends State<MyApp> {
                                                             questions: _questions) 
                 : Center(child : Text('You did it!')),
         ),
-
-
         );
 
    }
