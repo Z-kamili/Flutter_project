@@ -9,7 +9,8 @@ class Result extends StatelessWidget {
 
   Result(this.resultScore);
 
-  String get resultPhrase{
+  String get resultPhrase
+  {
     var resultText = 'You did it!';
     if(resultScore <= 8) {
       resultText = 'You are awesome and innocent';
@@ -29,7 +30,10 @@ class Result extends StatelessWidget {
       return Center(
         child: Text(
         resultPhrase,
-        style:TextStyle(fontSize: 36,fontWeight: FontWeight.bold)),
+        style:TextStyle(fontSize: 36,fontWeight: FontWeight.bold),
+        textAlign:TextAlign.center,
+        ),
+       
       );
   }
 
