@@ -6,8 +6,10 @@ import './result.dart';
 class Result extends StatelessWidget {
 
   final int resultScore;
+  final VoidCallback resetHandler;
+  
 
-  Result(this.resultScore);
+  Result(this.resultScore,this.resetHandler);
 
   String get resultPhrase
   {
@@ -29,12 +31,22 @@ class Result extends StatelessWidget {
   {
       return Center(
         child: Column(
-          children: [
+          children: <Widget>[
             Text(
             resultPhrase,
             style:TextStyle(fontSize: 36,fontWeight: FontWeight.bold),
             textAlign:TextAlign.center,
             ),
+             ElevatedButton(
+             style: ElevatedButton.styleFrom(
+              // ignore: deprecated_member_use
+              primary: Colors.blue,
+            ),
+            // ignore: sort_child_properties_last
+            child: Text('Restart'),
+           // ignore: unnecessary_this
+            onPressed:resetHandler
+           ),
           ],
         ),
        
