@@ -3,6 +3,7 @@
 // ignore_for_file: prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/result.dart';
 import './answer.dart';
 import './question.dart';
 import './quiz.dart';
@@ -96,7 +97,7 @@ class _MyAppState extends State<MyApp> {
            body : _questionIndex < _questions.length ? Quiz(answerQuestion : _answerQuestion, 
                                                             questionIndex: _questionIndex ,
                                                             questions: _questions) 
-                : Center(child : Text('You did it!')),
+                : Result(_totalScore),
         ),
         );
 
