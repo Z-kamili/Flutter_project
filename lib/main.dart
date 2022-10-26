@@ -30,18 +30,33 @@ class _MyAppState extends State<MyApp> {
 
   var _questionIndex = 0;
   final _questions = const [
-          {
+        {
           'questionText':'What is your favorite color?',
-          'answers':['Black','Red','Green','White'],
-          },
-          {
+          'answers':[
+            {'text':'Black','score':10},
+            {'text':'Red','score':5},
+            {'text':'Green','score':3},
+            {'text':'White','score':1}
+            ],
+        },
+        {
           'questionText':'What is your favorite animal?',
-          'answers':['Rabbit','Snake','Elephant','Lion'],
-          },
-          {
+          'answers':[
+            {'text':'Rabbit','score':3},
+            {'text':'Snake','score':11},
+            {'text':'Elephant','score':5},
+            {'text':'Lion','score':9}
+          ],
+        },
+        {
           'questionText':'Who is your favorite player?',
-          'answers':['Ronaldo','Messi','Mané','Salah'],
-          },
+          'answers':[
+             {'text':'Ronaldo','score':1},
+             {'text':'Messi','score':1},
+             {'text':'Mané','score':1},
+             {'text':'Salah','score':1}
+          ],
+        },
 ];
 
 
@@ -76,7 +91,10 @@ class _MyAppState extends State<MyApp> {
            // ignore: prefer_const_constructors
            appBar: AppBar(title: Text('My First App'),),//AppBar
            // ignore: duplicate_ignore
-           body : _questionIndex < _questions.length ? Quiz(answerQuestion : _answerQuestion, questionIndex: _questionIndex , questions: _questions) : Center(child : Text('You did it!')),
+           body : _questionIndex < _questions.length ? Quiz(answerQuestion : _answerQuestion, 
+                                                            questionIndex: _questionIndex ,
+                                                            questions: _questions) 
+                : Center(child : Text('You did it!')),
         ),
 
 
