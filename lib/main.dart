@@ -49,13 +49,18 @@ class _MyAppState extends State<MyApp> {
     // List<Map<String, Object>>
     // ignore: unused_local_variable
     // ignore: avoid_print
-    print(_questionIndex);
-    if(_questionIndex < questions.length - 1) {
-    // ignore: avoid_print
     setState(() {
       _questionIndex = _questionIndex + 1;
     }); 
-
+    // ignore: avoid_print
+    print(_questionIndex);
+    if(_questionIndex < questions.length) {
+      // ignore: avoid_print
+      print('We have more questions!');
+         
+    } else {
+      // ignore: avoid_print
+      print('No more question!');
     }
 
   }
@@ -66,19 +71,19 @@ class _MyAppState extends State<MyApp> {
 
         // ignore: duplicate_ignore, duplicate_ignore
         return MaterialApp(home:Scaffold(
-           
            // ignore: prefer_const_constructors
            appBar: AppBar(title: Text('My First App'),),//AppBar
            // ignore: duplicate_ignore
-           body: Column(children:[
+           body: _questionIndex < questions.length ? Column(children:[
               // ignore: prefer_const_constructors
               Question(questions[_questionIndex]['questionText'] as String), // Question
               ...(questions[_questionIndex]['answers'] as List<String>)
                 .map((answer){
                 return Answer(_answerQuestion,answer);
               }).toList()
-           ],),
+           ],) : Center(child : Text('You did it!')),
         ),
+
 
         );
 
