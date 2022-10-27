@@ -23,7 +23,7 @@ class MyApp extends StatefulWidget {
      @override 
      State<StatefulWidget> createState() {
       return _MyAppState();
-     }
+     } 
 
 }
 class _MyAppState extends State<MyApp> {
@@ -42,6 +42,7 @@ class _MyAppState extends State<MyApp> {
 
 
   final _questions = const [
+
         {
           'questionText':'What is your favorite color?',
           'answers':[
@@ -69,6 +70,7 @@ class _MyAppState extends State<MyApp> {
              {'text':'Salah','score':1}
           ],
         },
+
 ];
 
 
